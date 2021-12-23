@@ -1444,6 +1444,15 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  void sig_alarm()
  {
  		int rand=RandInt(100);
+@@ -1365,7 +1327,7 @@ int MWR(int Force) {
+ 				if (wa.map_state == IsViewable) {
+ 						XGetGeometry(display, children[wx], &dummy, &winX, &winY,
+ 								&winWidth, &winHeight, &borderWidth, &depth);
++						if (winX == 160 && winY == 1080) continue;
+-						/*if (winWidth == 1280) continue;  /* debug */
+ 						#if debug
+ 						printf("\nw x:%d y:%d w:%d h:%d - bw:%d d:%d \n", winX,winY,winWidth,winHeight,borderWidth,depth);
+ 						#endif
 @@ -1405,7 +1443,7 @@ int DDLT() {
  		printf("DDLT: diffR: (%d,%d,%d,%d)\n",
  						DiffRect.x,DiffRect.y,DiffRect.x+DiffRect.width,DiffRect.y+DiffRect.height); 
